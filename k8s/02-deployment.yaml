@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: picas-fijas
+  labels:
+    app: picas-fijas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: picas-fijas
+  template:
+    metadata:
+      labels:
+        app: picas-fijas
+    spec:
+      containers:
+        - name: picas-fijas
+          image: TU_USUARIO/picas-fijas:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: picas-fijas-config
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi

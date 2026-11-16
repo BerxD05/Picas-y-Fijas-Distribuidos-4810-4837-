@@ -1,0 +1,21 @@
+{
+  "name": "picas-fijas",
+  "version": "1.0.0",
+  "description": "Juego Picas y Fijas distribuido sobre Kubernetes (API REST + front basico)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "prueba": "node pruebas/smoke.mjs"
+  },
+  "keywords": [
+    "picas",
+    "fijas",
+    "kubernetes",
+    "rest"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

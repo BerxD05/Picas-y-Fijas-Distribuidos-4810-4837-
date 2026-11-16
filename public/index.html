@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picas y Fijas</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div>
+        <h1>Picas y Fijas</h1>
+        <p class="subtitulo">Adivina el número de 4 dígitos de tu rival</p>
+      </div>
+      <div id="sesion" class="sesion">Sin sesión</div>
+    </header>
+
+    <main class="contenedor">
+      <section class="tarjeta">
+        <h2><span class="paso">1</span> Ingresa tu nombre</h2>
+        <div class="fila">
+          <input id="nombre" type="text" placeholder="Tu nombre" maxlength="20" autocomplete="off" />
+          <button id="btnLogin" class="primario">Entrar</button>
+        </div>
+      </section>
+
+      <section class="tarjeta">
+        <h2><span class="paso">2</span> Crea tu juego</h2>
+        <p class="ayuda">Escribe un número secreto de 4 dígitos distintos.</p>
+        <div class="fila">
+          <input
+            id="numeroSecreto"
+            type="text"
+            inputmode="numeric"
+            placeholder="Ej. 4271"
+            maxlength="4"
+            autocomplete="off"
+          />
+          <button id="btnCrear" class="primario">Crear juego</button>
+        </div>
+        <p id="idCreado" class="ayuda"></p>
+      </section>
+
+      <section class="tarjeta">
+        <div class="titulo-fila">
+          <h2><span class="paso">3</span> Juegos</h2>
+          <button id="btnRefrescar" class="secundario">Actualizar</button>
+        </div>
+        <p class="ayuda">
+          Para unirte a un juego necesitas tener tu número secreto arriba. El juego empieza
+          cuando entran dos jugadores.
+        </p>
+        <div id="listaJuegos" class="lista">
+          <p class="vacio">Aún no hay juegos.</p>
+        </div>
+      </section>
+
+      <section class="tarjeta">
+        <h2><span class="paso">4</span> Tablero</h2>
+        <div id="tablero" class="tablero">
+          <p class="vacio">Crea un juego o únete a uno para empezar.</p>
+        </div>
+
+        <div id="zonaJugada" class="zona-jugada oculto">
+          <div class="fila">
+            <input
+              id="intento"
+              type="text"
+              inputmode="numeric"
+              placeholder="Adivina el número"
+              maxlength="4"
+              autocomplete="off"
+            />
+            <button id="btnJugar" class="primario">Probar</button>
+          </div>
+        </div>
+      </section>
+
+      <details class="tarjeta reglas">
+        <summary>¿Cómo se juega?</summary>
+        <ul>
+          <li>Cada jugador escribe un número secreto de 4 dígitos, todos diferentes.</li>
+          <li>Por turnos intentas adivinar el número del rival.</li>
+          <li>
+            Cada intento devuelve <b>fijas</b> (cifra correcta en la posición correcta) y
+            <b>picas</b> (cifra correcta en otra posición).
+          </li>
+          <li>Gana quien acierte las 4 fijas primero.</li>
+        </ul>
+      </details>
+    </main>
+
+    <div id="aviso" class="aviso oculto"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

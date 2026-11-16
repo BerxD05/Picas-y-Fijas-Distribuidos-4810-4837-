@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: picas-fijas-config
+  labels:
+    app: picas-fijas
+data:
+  PORT: "3000"
