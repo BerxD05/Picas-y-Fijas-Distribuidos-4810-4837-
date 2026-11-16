@@ -246,7 +246,7 @@ El **Deployment** que crea el pod:
 
 - `replicas: 1`: una sola instancia, porque el estado está en memoria (con varias
   réplicas cada pod tendría juegos distintos).
-- Imagen `TU_USUARIO/picas-fijas:1.0` (hay que cambiarla al publicar la propia).
+- Imagen `berxd05/picas-fijas:1.0`, publicada en Docker Hub.
 - Puerto `3000`.
 - Variables desde el ConfigMap.
 - `readinessProbe` y `livenessProbe` contra `/health`: Kubernetes espera a que la app
@@ -326,10 +326,10 @@ Las peticiones se identifican por el nombre (`jugador`), que debe estar registra
 El programa y los manifiestos están listos, pero aún no se ha hecho el proceso de
 entrega:
 
-- [ ] Crear el repositorio git y subirlo (GitHub/GitLab público).
-- [ ] Construir la imagen Docker.
-- [ ] Publicarla en Docker Hub (o cargarla en el cluster).
-- [ ] Editar la imagen en `k8s/02-deployment.yaml`.
+- [x] Crear el repositorio git y subirlo (GitHub público).
+- [x] Construir la imagen Docker.
+- [x] Publicarla en Docker Hub (`berxd05/picas-fijas:1.0`).
+- [x] Configurar la imagen en `k8s/02-deployment.yaml`.
 - [ ] Desplegar con `kubectl apply` y verificar el acceso.
 
 Cuando quieras avanzar con esto, pídelo y se hace paso a paso.

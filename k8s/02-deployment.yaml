@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: picas-fijas
-          image: TU_USUARIO/picas-fijas:1.0
+          image: berxd05/picas-fijas:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

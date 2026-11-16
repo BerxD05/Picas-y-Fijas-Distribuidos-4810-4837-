@@ -119,13 +119,13 @@ los dos roles: en la primera crea el juego, en la segunda ingresa otro nombre y 
 ### 4.1 Construir y publicar la imagen
 
 ```bash
-docker build -t TU_USUARIO/picas-fijas:1.0 .
+docker build -t berxd05/picas-fijas:1.0 .
 docker login
-docker push TU_USUARIO/picas-fijas:1.0
+docker push berxd05/picas-fijas:1.0
 ```
 
-Luego edita `k8s/02-deployment.yaml` y cambia `image: TU_USUARIO/picas-fijas:1.0`
-por tu usuario real.
+El manifiesto `k8s/02-deployment.yaml` ya usa `image: berxd05/picas-fijas:1.0`.
+Si publicas con otra cuenta, cambia esa línea por la tuya.
 
 > Alternativa sin Docker Hub:
 > - **minikube:** `minikube image load picas-fijas:1.0` y en el Deployment usa
